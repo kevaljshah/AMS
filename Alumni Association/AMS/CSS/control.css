@@ -1,0 +1,194 @@
+﻿.toolbar {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: small;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .toolbar:hover {
+        background-color: white;
+        color: #AE1213;
+        text-align: center;
+        font-size: small;
+    }
+
+.toolbar_dropdown-arrow {
+    height: 0px;
+    width: 0px;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid white;
+}
+
+.menu_linkbutton {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 8px 20px 8px 20px;
+    text-align: center;
+    font-size: medium;
+}
+
+    .menu_linkbutton:hover {
+        border: 2px;
+        border-style: solid;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: #FFFFFF;
+        color: #AE1213;
+        padding: 8px 18px 8px 18px;
+        font-size: medium;
+    }
+
+.submenu_linkbutton {
+    text-decoration: none;
+    color: #58595B;
+    font-weight: 800;
+    border-spacing: 1px;
+    font-size: medium;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .submenu_linkbutton:hover {
+        color: #AE1213;
+    }
+
+.submenu_table {
+    border-bottom-style: dotted;
+    border-width: 1px;
+    border-color: black;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+input {
+    border: 1px solid #AE1213;
+    color: black;
+    background-color: #F5F6FA;
+    border-radius: 3px;
+    padding: 3px 3px;
+}
+
+    input:hover {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #AE1213;
+        padding: 2px 2px;
+    }
+
+    input:focus {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #AE1213;
+        padding: 2px 2px;
+        outline: none;
+    }
+
+    input[type="text"] {
+        background-color: #F5F6FA;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #AE1213;
+        border-radius: 3px;
+        padding: 3px 3px;
+    }
+
+        input[type="text"]:hover {
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #AE1213;
+            padding: 2px 2px;
+        }
+
+select {
+    color: black;
+    background-color: #F5F6FA;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #AE1213;
+    border-radius: 3px;
+    padding: 3px 3px;
+    width: 150px;
+}
+
+    select:hover {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #AE1213;
+        padding: 2px 2px;
+        outline: none;
+    }
+
+    select:focus {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #AE1213;
+        padding: 2px 2px;
+        outline: none;
+    }
+
+textarea {
+    color: black;
+    background-color: #F5F6FA;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #AE1213;
+    border-radius: 3px;
+    padding: 3px 3px;
+}
+
+    textarea:hover {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #AE1213;
+        padding: 2px 2px;
+    }
+
+    textarea:focus {
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #AE1213;
+        padding: 2px 2px;
+        outline: none;
+    }
+
+.table_headercell {
+    background-color: #909090;
+    color: black;
+    padding-left: 10px;
+    font-size: larger;
+    font-style: oblique;
+    font-weight: lighter;
+    width: 100%;
+}
+
+.textboxwatermark {
+    color: #909090;
+    text-align: center;
+}
+
+    .textboxwatermark:hover {
+        color: #909090;
+        text-align: center;
+    }
+
+.textboxwatermark_left {
+    color: #909090;
+    text-align: left;
+}
+
+    .textboxwatermark_left:hover {
+        color: #909090;
+        text-align: left;
+    }

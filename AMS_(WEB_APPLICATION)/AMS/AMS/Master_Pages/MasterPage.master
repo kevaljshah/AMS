@@ -1,0 +1,175 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Master_Pages_masterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="shortcut icon" href="../images/alumni_icon.ico" type="image/ico" />
+    <title>MPSTME Alumni</title>
+    <link href="../CSS/control.css" rel="stylesheet" />
+    <link href="../CSS/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="cph_head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="body">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"></asp:ScriptManager>
+        <div>
+            <table id="Table1" runat="server" visible="true" cellpadding="0" cellspacing="0" style="display: none;">
+                <tr>
+                    <td align="right" colspan="2">
+                        <div class="toolbar_dropdown-arrow"></div>
+                    </td>
+                </tr>
+                <tr style="background-color: white;">
+                    <td>
+                        <table id="Table2" runat="server" cellpadding="20" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <asp:ImageMap ID="img_profile_image" runat="server" Style="height: auto; width: auto; max-height: 150px; max-width: 150px;" HotSpotMode="Navigate">
+                                        <asp:RectangleHotSpot AlternateText="Change Image" HotSpotMode="Navigate" Top="-2" Left="-2" Right="152" Bottom="152" NavigateUrl="~/Account_Settings/Change_Profile_Image.aspx" />
+                                    </asp:ImageMap>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table id="Table3" runat="server" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center">
+                                    <asp:Label ID="lbl_name_val" runat="server" Font-Bold="true"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <asp:Label ID="lbl_gr_no_val" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr height="50" valign="bottom">
+                                <td>
+                                    <asp:LinkButton ID="lb_account_settings" runat="server" CssClass="dropdown_linkbutton" CausesValidation="false" Visible="false"></asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="part1">
+            <table id="tbl_toolbar" runat="server" align="right" cellpadding="0" cellspacing="3" height="25px" style="margin-right: 1%;">
+                <tr>
+                    <td>
+                        <asp:LinkButton ID="lb_profile_name" runat="server" CssClass="toolbar" CausesValidation="false"></asp:LinkButton>
+                        <ajx:HoverMenuExtender ID="HoverMenuExtender1" runat="server" TargetControlID="lb_profile_name" OffsetX="55" OffsetY="16"
+                            PopupPosition="Left" PopupControlID="Table1" PopDelay="1000" HoverDelay="100" HoverCssClass=" toolbar toolbar_dropdown">
+                        </ajx:HoverMenuExtender>
+                    </td>
+                    <td valign="middle">
+                        <asp:ImageMap ID="img_btn_logout" runat="server" ImageAlign="Baseline" ImageUrl="~/images/logout.png" HotSpotMode="PostBack" OnClick="img_btn_logout_Click" ToolTip="Logout" Style="height: auto; width: auto; max-height: 15px; max-width: 15px; margin-top: 5px;">
+                            <asp:RectangleHotSpot AlternateText="Logout" Top="-2" Left="-2" Right="17" Bottom="17" HotSpotMode="PostBack" />
+                        </asp:ImageMap>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="part2">
+            <table runat="server" align="center" cellpadding="0">
+                <tr>
+                    <td>
+                        <asp:Image ID="img_alumni_logo" runat="server" ImageUrl="~/images/logo_engineering.jpg" Height="100" />
+                    </td>
+                    <td>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/alumni_logo.png" Height="100" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="part3">
+            <table id="tbl_menu" runat="server" align="center" height="30px" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <asp:Menu ID="menu_navigation_bar" runat="server" StaticDisplayLevels="1" Orientation="Horizontal" StaticMenuItemStyle-ForeColor="#FFFFFF" StaticMenuItemStyle-Font-Size="Medium"
+                            StaticMenuItemStyle-HorizontalPadding="16px" StaticMenuItemStyle-VerticalPadding="4px" StaticHoverStyle-BackColor="#ECECEC" StaticHoverStyle-ForeColor="#AE1213"
+                            DynamicMenuItemStyle-BackColor=" #ECECEC" DynamicMenuItemStyle-ForeColor="#585A59" DynamicMenuItemStyle-HorizontalPadding="32px" DynamicHoverStyle-ForeColor="#AE1213"
+                            StaticEnableDefaultPopOutImage="false" DynamicEnableDefaultPopOutImage="false">
+                        </asp:Menu>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="part4">
+            <table id="tbl_home" runat="server" align="center" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="submenu_table" align="center" width="100%">
+                        <asp:DataList ID="dl_submenu" runat="server" RepeatDirection="Vertical" ItemStyle-VerticalAlign="Middle" Width="100%">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="lb" runat="server" Text='<%# Eval("submenu_text") %>' PostBackUrl='<%# Eval("post_back_url") %>' CssClass="submenu_linkbutton" CausesValidation="false"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="part5">
+            <asp:ContentPlaceHolder ID="cph_body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="part6">
+            <%--<table runat="server" align="center">
+                <tr>
+                    <td class="submenu_table">
+                        <asp:LinkButton ID="LinkButton1" runat="server" Text=" Upcoming Events" CssClass="submenu_linkbutton" OnClick="coming_soon"></asp:LinkButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="submenu_table">
+                        <asp:LinkButton ID="LinkButton2" runat="server" Text="Albums" CssClass="submenu_linkbutton" OnClick="coming_soon"></asp:LinkButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="submenu_table">
+                        <asp:LinkButton ID="LinkButton3" runat="server" Text="Alumni Speak" CssClass="submenu_linkbutton" OnClick="coming_soon"></asp:LinkButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="submenu_table">
+                        <asp:LinkButton ID="LinkButton4" runat="server" Text="Stay Connected" CssClass="submenu_linkbutton" OnClick="coming_soon"></asp:LinkButton>
+                    </td>
+                </tr>
+            </table>--%>
+        </div>
+        <div class="part7">
+            <table id="Table5" runat="server" align="center" cellpadding="0" cellspacing="20">
+                <tr>
+                    <td>
+                        <table id="Table7" runat="server" align="center" cellpadding="0" cellspacing="5" style="text-align: center;">
+                            <tr>
+                                <td valign="top">
+                                    <asp:LinkButton ID="lb_univ" runat="server" Text="The University" ForeColor="White" CausesValidation="false" PostBackUrl="http://nmims.edu/"></asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%--<asp:LinkButton ID="lb_univhome" runat="server" Text="University Home" CssClass="toolbar" CausesValidation="false"></asp:LinkButton>--%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ID="lb_schoolhome" runat="server" Text="MPSTME Home" CssClass="toolbar" CausesValidation="false" PostBackUrl="http://engineering.nmims.edu/"></asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ID="lb_schoolalumni" runat="server" Text="MPSTME Alumni" CssClass="toolbar" CausesValidation="false" PostBackUrl="~/Home/College_Home.aspx"></asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

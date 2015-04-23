@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Login_Master.master.cs" Inherits="Master_Pages_Login_Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MPSTME Alumni</title>
+    <link href="../CSS/control.css" rel="stylesheet" />
+    <link href="../CSS/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="cph_head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="body">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"></asp:ScriptManager>
+        <div class="part1">
+        </div>
+        <div class="part2">
+            <table id="Table2" runat="server" align="center" style="width:100%;">
+                <tr style="width:100%">
+                    <td style="width:80%;">
+                        <asp:Image ID="img_alumni_logo" runat="server" ImageUrl="~/images/logo_engineering.jpg" width="100%"/>
+                    </td>
+                    <td style="width:20%;">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/alumni_logo.png"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="part5" style="width: 100%; overflow: hidden; text-align: center;">
+            <asp:ContentPlaceHolder ID="cph_body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="part7" style="width:100%;">
+                </div>
+    </form>
+</body>
+</html>
